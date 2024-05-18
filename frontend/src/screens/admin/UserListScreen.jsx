@@ -36,14 +36,14 @@ function UserListScreen() {
       ) : error ? (
         <Message variant="danger">{error}</Message>
       ) : (
-        <Table striped hover responsive className="table-sm">
+        <Table striped bordered hover responsive className="table-sm">
           <thead>
             <tr>
               <th>ID</th>
               <th>NAME</th>
               <th>EMAIL</th>
               <th>ADMIN</th>
-              <th></th>
+              <th>ACTION</th>
             </tr>
           </thead>
           <tbody>

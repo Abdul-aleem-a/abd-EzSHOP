@@ -1,7 +1,7 @@
 import React from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { Table, Button, Row, Col } from "react-bootstrap";
-import { FaEdit, FaTrash } from "react-icons/fa";
+import { FaEdit, FaPlus, FaTrash } from "react-icons/fa";
 import Message from "../../components/Message";
 import Loader from "../../components/Loader";
 import { useParams } from "react-router-dom";
@@ -57,7 +57,7 @@ function ProductListScreen() {
         </Col>
         <Col className="text-end">
           <Button className="btn-sm m-3" onClick={createProductHandler}>
-            <FaEdit /> Create Product
+            <FaPlus /> Create Product
           </Button>
         </Col>
       </Row>
@@ -69,10 +69,10 @@ function ProductListScreen() {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Message variant="danger">{error}</Message>
+        <Message variant="danger">{error.data.message}</Message>
       ) : (
         <>
-          <Table striped hover responsive className="table-sm">
+          <Table striped bordered hover responsive className="table-sm">
             <thead>
               <tr>
                 <th>ID</th>
@@ -80,10 +80,10 @@ function ProductListScreen() {
                 <th>PRICE</th>
                 <th>CATEGORY</th>
                 <th>BRAND</th>
-                <th></th>
+                <th>ACTION</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody >
               {data.products.map((product) => (
                 <tr key={product._id}>
                   <td>{product._id}</td>

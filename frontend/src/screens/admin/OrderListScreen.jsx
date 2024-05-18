@@ -17,7 +17,7 @@ function OrderListScreen() {
       ) : error ? (
         <Message variant="danger">{error}</Message>
       ) : (
-        <Table striped hover responsive className="table-sm">
+        <Table striped bordered hover responsive className="table-sm">
           <thead>
             <tr>
               <th>ID</th>
@@ -26,7 +26,7 @@ function OrderListScreen() {
               <th>TOTAL</th>
               <th>PAID</th>
               <th>DELIVERED</th>
-              <th></th>
+              <th>DETAILS</th>
             </tr>
           </thead>
           <tbody>
