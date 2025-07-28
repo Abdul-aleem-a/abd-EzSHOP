@@ -37,19 +37,18 @@ function ProductScreen() {
     dispatch(addToCart({ ...product, qty }));
     navigate("/cart");
   };
-  
+
   const {
     data: product,
     isLoading,
     refetch,
     error,
   } = useGetProductDetailsQuery(productId);
-  
+
   const [createReview, { isLoading: loadingProductReview }] =
-  useCreateReviewMutation();
-  
+    useCreateReviewMutation();
+
   const { userInfo } = useSelector((state) => state.auth);
-  
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -61,9 +60,9 @@ function ProductScreen() {
         comment,
       }).unwrap();
       refetch();
-      setRating(0)
-      setComment('')
-      toast.success('Review submitted successfully');
+      setRating(0);
+      setComment("");
+      toast.success("Review submitted successfully");
     } catch (err) {
       toast.error(err?.data?.message || err.error);
     }
@@ -83,7 +82,7 @@ function ProductScreen() {
         </Message>
       ) : (
         <>
-        <Meta title={product.name}/>
+          <Meta title={product.name} />
           <Row>
             <Col md={5}>
               <Image src={product.image} alt={product.name} fluid />
@@ -222,7 +221,16 @@ function ProductScreen() {
                     </Form>
                   ) : (
                     <Message>
-                      Please <Link to="/login">sign in</Link> to write a review
+                      Please{" "}
+                      <Link to="/login">
+                        <button
+                          className="bg-primary"
+                          style={{ borderRadius: "4px", color:"white"}}
+                        >
+                          Sign In
+                        </button>
+                      </Link>{" "}
+                      to write a review
                       {""}
                     </Message>
                   )}

@@ -121,11 +121,12 @@ function OrderScreen() {
             <ListGroup.Item>
               <h2>Shipping: </h2>
               <p>
-                <strong>Name: </strong> {order.user.name}
+                <strong>Name: </strong> {order.user?.name}
               </p>
               <p>
-                <strong>Email:</strong> {order.user.email}
+                <strong>Email:</strong> {order.user?.email}
               </p>
+
               <p>
                 <strong>Address: </strong>
                 {order.shippingAddress.address} {order.shippingAddress.city}{" "}

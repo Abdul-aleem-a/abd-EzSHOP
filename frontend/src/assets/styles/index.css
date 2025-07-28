@@ -57,3 +57,7 @@ table th {
   font-size: 1.75rem;
   color: rgb(227, 230, 225);
 }
+
+body{
+  background-color: whitesmoke;
+}

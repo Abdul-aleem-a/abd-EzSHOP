@@ -31,7 +31,7 @@ function Header() {
   return (
     <div>
       <header>
-        <Navbar bg="dark" variant="dark" expand="md" collapseOnSelect>
+        <Navbar bg="primary" variant="dark" expand="md" collapseOnSelect>
           <Container>
             <LinkContainer to={"/"}>
               <Navbar.Brand className="brand">EzSHOP</Navbar.Brand>
